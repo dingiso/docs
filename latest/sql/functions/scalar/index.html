@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://docs.hstream.io/latest/develop/java-sdk/connect/">
+        <link rel="canonical" href="https://docs.hstream.io/latest/sql/functions/scalar/">
       
       <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
-        <title>Connect - HStreamDB Docs</title>
+        <title>Scalar Functions - HStreamDB Docs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#connect" class="md-skip">
+        <a href="#trigonometric-functions" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Connect
+              Scalar Functions
             
           </span>
         </div>
@@ -243,8 +243,6 @@
         
   
   
-    
-  
 
 
   
@@ -256,7 +254,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../installation/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../develop/java-sdk/installation/" class="md-tabs__link">
         Develop
       </a>
     </li>
@@ -284,13 +282,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../sql/sql-overview/" class="md-tabs__link">
+      <a href="../../sql-overview/" class="md-tabs__link md-tabs__link--active">
         HStreamDB SQL
       </a>
     </li>
@@ -636,14 +636,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Develop
@@ -659,14 +657,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
       
       <label class="md-nav__link" for="__nav_3_1">
         Java SDK
@@ -684,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/installation/" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -694,58 +690,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Connect
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../develop/java-sdk/connect/" class="md-nav__link">
         Connect
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -755,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stream/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/stream/" class="md-nav__link">
         Streams
       </a>
     </li>
@@ -767,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../subscription/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/subscription/" class="md-nav__link">
         Subscriptions
       </a>
     </li>
@@ -779,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../write/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/write/" class="md-nav__link">
         Write Data
       </a>
     </li>
@@ -791,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../consume/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/consume/" class="md-nav__link">
         Consume Data
       </a>
     </li>
@@ -803,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../query/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/query/" class="md-nav__link">
         Stream Processing with SQL
       </a>
     </li>
@@ -870,12 +819,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         HStreamDB SQL
@@ -893,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/sql-overview/" class="md-nav__link">
+      <a href="../../sql-overview/" class="md-nav__link">
         HStreamDB SQL overview
       </a>
     </li>
@@ -905,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/sql-quick-reference/" class="md-nav__link">
+      <a href="../../sql-quick-reference/" class="md-nav__link">
         HStreamDB SQL quick reference
       </a>
     </li>
@@ -938,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/statements/create-stream/" class="md-nav__link">
+      <a href="../../statements/create-stream/" class="md-nav__link">
         CREATE STREAM
       </a>
     </li>
@@ -950,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/statements/create-view/" class="md-nav__link">
+      <a href="../../statements/create-view/" class="md-nav__link">
         CREATE VIEW
       </a>
     </li>
@@ -962,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/statements/create-connector/" class="md-nav__link">
+      <a href="../../statements/create-connector/" class="md-nav__link">
         CREATE CONNECTOR
       </a>
     </li>
@@ -974,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/statements/select-stream/" class="md-nav__link">
+      <a href="../../statements/select-stream/" class="md-nav__link">
         SELECT (Stream)
       </a>
     </li>
@@ -986,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/statements/select-view/" class="md-nav__link">
+      <a href="../../statements/select-view/" class="md-nav__link">
         SELECT (View)
       </a>
     </li>
@@ -998,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/statements/insert/" class="md-nav__link">
+      <a href="../../statements/insert/" class="md-nav__link">
         INSERT
       </a>
     </li>
@@ -1014,12 +965,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" data-md-state="indeterminate" type="checkbox" id="__nav_5_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
       
       <label class="md-nav__link" for="__nav_5_4">
         Functions
@@ -1037,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/functions/aggregation/" class="md-nav__link">
+      <a href="../aggregation/" class="md-nav__link">
         Aggregation Functions
       </a>
     </li>
@@ -1047,11 +1000,102 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../sql/functions/scalar/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Scalar Functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Scalar Functions
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trigonometric-functions" class="md-nav__link">
+    Trigonometric Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-functions" class="md-nav__link">
+    Arithmetic Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicate-functions" class="md-nav__link">
+    Predicate Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-functions" class="md-nav__link">
+    String Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#null-functions" class="md-nav__link">
+    Null Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-and-date-functions" class="md-nav__link">
+    Time and Date Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Time and Date Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-format" class="md-nav__link">
+    Time Format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-functions" class="md-nav__link">
+    Array Functions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1067,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sql/appendix/" class="md-nav__link">
+      <a href="../../appendix/" class="md-nav__link">
         Appendix
       </a>
     </li>
@@ -1204,8 +1248,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1214,15 +1256,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#trigonometric-functions" class="md-nav__link">
+    Trigonometric Functions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#arithmetic-functions" class="md-nav__link">
+    Arithmetic Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicate-functions" class="md-nav__link">
+    Predicate Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-functions" class="md-nav__link">
+    String Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#null-functions" class="md-nav__link">
+    Null Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-and-date-functions" class="md-nav__link">
+    Time and Date Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Time and Date Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-format" class="md-nav__link">
+    Time Format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-functions" class="md-nav__link">
+    Array Functions
   </a>
   
 </li>
@@ -1240,25 +1330,194 @@
               
                 
                 
-                <h1 id="connect">Connect<a class="headerlink" href="#connect" title="Permanent link">&para;</a></h1>
-<p>This page shows how to connect to HStreamDB using Java SDK.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Make sure you have HStreamDB running and accessible.</p>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">io.hstream.example</span><span class="p">;</span>
-
-<span class="kn">import</span> <span class="nn">io.hstream.HStreamClient</span><span class="p">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConnectExample</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
-        <span class="c1">// need to replace the serviceUrl to &quot;&lt;Your HStreamDB server host&gt;:&lt;Your HStreamDB server port&gt;&quot;</span>
-        <span class="kd">final</span> <span class="n">String</span> <span class="n">serviceUrl</span> <span class="o">=</span> <span class="s">&quot;localhost:6570&quot;</span><span class="p">;</span>
-        <span class="n">HStreamClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">HStreamClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">serviceUrl</span><span class="p">(</span><span class="n">serviceUrl</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Connected&quot;</span><span class="p">);</span>
-        <span class="n">client</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+                  <h1>Scalar Functions</h1>
+                
+                <p>Scalar functions operate on one or more values and then return a single value. They can be used wherever a value expression is valid.</p>
+<p>Scalar functions are divided into serval kinds.</p>
+<h3 id="trigonometric-functions">Trigonometric Functions<a class="headerlink" href="#trigonometric-functions" title="Permanent link">&para;</a></h3>
+<p>All trigonometric functions perform a calculation, operate on a single numeric value and then return a single numeric value.</p>
+<p>For values outside the domain, <code>NaN</code> is returned.</p>
+<div class="highlight"><pre><span></span><code><span class="n">SIN</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">SINH</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">ASIN</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">ASINH</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">COS</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">COSH</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">ACOS</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">ACOSH</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">TAN</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">TANH</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">ATAN</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">ATANH</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="arithmetic-functions">Arithmetic Functions<a class="headerlink" href="#arithmetic-functions" title="Permanent link">&para;</a></h3>
+<p>The following functions perform a calculation, operate on a single numeric value and then return a single numeric value.</p>
+<div class="highlight"><pre><span></span><code><span class="k">ABS</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Absolute value.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">CEIL</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+</code></pre></div>
+The function application <code>CEIL(n)</code> returns the least integer not less than <code>n</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">FLOOR</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>The function application <code>FLOOR(n)</code> returns the greatest integer not greater than <code>n</code>.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">ROUND</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+</code></pre></div>
+The function application <code>ROUND(n)</code> returns the nearest integer to <code>n</code> the even integer if <code>n</code> is equidistant between two integers.</p>
+<div class="highlight"><pre><span></span><code><span class="n">SQRT</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>The square root of a numeric value.</p>
+<div class="highlight"><pre><span></span><code><span class="n">LOG</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">LOG2</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">LOG10</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+<span class="n">EXP</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="n">SIGN</span><span class="p">(</span><span class="n">num_expr</span><span class="p">)</span>
+</code></pre></div>
+The function application <code>SIGN(n)</code> returns the sign of a numeric value as an Integer.</p>
+<ul>
+<li>returns <code>-1</code> if <code>n</code> is negative</li>
+<li>returns <code>0</code> if <code>n</code> is exact zero</li>
+<li>returns <code>1</code> if <code>n</code> is positive</li>
+<li>returns <code>null</code> if <code>n</code> is exact <code>null</code></li>
+</ul>
+<h3 id="predicate-functions">Predicate Functions<a class="headerlink" href="#predicate-functions" title="Permanent link">&para;</a></h3>
+<p>Function applications of the form <code>IS_A(x)</code> where <code>A</code> is the name of a type returns <code>TRUE</code> if the argument <code>x</code> is of type <code>A</code>, otherwise <code>FALSE</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">IS_INT</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+<span class="n">IS_FLOAT</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+<span class="n">IS_NUM</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+<span class="n">IS_BOOL</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+<span class="n">IS_STR</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+<span class="n">IS_MAP</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+<span class="n">IS_ARRAY</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+<span class="n">IS_DATE</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+<span class="n">IS_TIME</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="string-functions">String Functions<a class="headerlink" href="#string-functions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">TO_STR</span><span class="p">(</span><span class="n">val_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Convert a value expression to a readable string.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">TO_LOWER</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+Convert a string to lower case, using simple case conversion.</p>
+<div class="highlight"><pre><span></span><code><span class="n">TO_UPPER</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>Convert a string to upper case, using simple case conversion.</p>
+<div class="highlight"><pre><span></span><code><span class="k">TRIM</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>Remove leading and trailing white space from a string.</p>
+<div class="highlight"><pre><span></span><code><span class="n">LEFT_TRIM</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>Remove leading white space from a string.</p>
+<div class="highlight"><pre><span></span><code><span class="n">RIGHT_TRIM</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>Remove trailing white space from a string.</p>
+<div class="highlight"><pre><span></span><code><span class="n">REVERSE</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>Reverse the characters of a string.</p>
+<div class="highlight"><pre><span></span><code><span class="n">STRLEN</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>Returns the number of characters in a string.</p>
+<div class="highlight"><pre><span></span><code><span class="n">TAKE</span><span class="p">(</span><span class="n">num_expr</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>The function application <code>TAKE(n, s)</code> returns the prefix of the string of length <code>n</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">TAKEEND</span><span class="p">(</span><span class="n">num_expr</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>The function application <code>TAKEEND(n, s)</code> returns the suffix remaining after taking <code>n</code> characters from the end of the string.</p>
+<div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="p">(</span><span class="n">num_expr</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>The function application <code>DROP(n, s)</code> returns the suffix of the string after the first <code>n</code> characters, or the empty string if n is greater than the length of the string.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DROPEND</span><span class="p">(</span><span class="n">num_expr</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>The function application <code>DROPEND(n, s)</code> returns the prefix remaining after dropping <code>n</code> characters from the end of the string.</p>
+<h3 id="null-functions">Null Functions<a class="headerlink" href="#null-functions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">IFNULL</span><span class="p">(</span><span class="n">val_expr</span><span class="p">,</span> <span class="n">val_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>The function application <code>IFNULL(x, y)</code> returns <code>y</code> if <code>x</code> is <code>NULL</code>, otherwise <code>x</code>.</p>
+<p>When the argument type is a complex type, for example, <code>ARRAY</code> or <code>MAP</code>, the contents of the complex type are not inspected.</p>
+<div class="highlight"><pre><span></span><code><span class="k">NULLIF</span><span class="p">(</span><span class="n">val_expr</span><span class="p">,</span> <span class="n">val_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>The function application <code>NULLIF(x, y)</code> returns <code>NULL</code> if <code>x</code> is equal to <code>y</code>, otherwise <code>x</code>.</p>
+<p>When the argument type is a complex type, for example, <code>ARRAY</code> or <code>MAP</code>, the contents of the complex type are not inspected.</p>
+<h3 id="time-and-date-functions">Time and Date Functions<a class="headerlink" href="#time-and-date-functions" title="Permanent link">&para;</a></h3>
+<h4 id="time-format">Time Format<a class="headerlink" href="#time-format" title="Permanent link">&para;</a></h4>
+<p>Formats are analogous to <a href="https://man7.org/linux/man-pages/man3/strftime.3.html">strftime</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Format Name</th>
+<th>Raw Format String</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>simpleDateFormat</td>
+<td>"%Y-%m-%d %H:%M:%S"</td>
+</tr>
+<tr>
+<td>iso8061DateFormat</td>
+<td>"%Y-%m-%dT%H:%M:%S%z"</td>
+</tr>
+<tr>
+<td>webDateFormat</td>
+<td>"%a, %d %b %Y %H:%M:%S GMT"</td>
+</tr>
+<tr>
+<td>mailDateFormat</td>
+<td>"%a, %d %b %Y %H:%M:%S %z"</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="n">DATETOSTRING</span><span class="p">(</span><span class="n">val_expr</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>Formatting seconds since 1970-01-01 00:00:00 UTC to string in GMT with the second string argument as the given format name.</p>
+<div class="highlight"><pre><span></span><code><span class="n">STRINGTODATE</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>Formatting string to seconds since 1970-01-01 00:00:00 UTC in GMT with the second string argument as the given format name.</p>
+<h3 id="array-functions">Array Functions<a class="headerlink" href="#array-functions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_CONTAINS</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">,</span> <span class="n">val_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Given an array, checks if the search value is contained in the array (of the same type).</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_DISTINCT</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Returns an array of all the distinct values, including <code>NULL</code> if present, from the input array. The output array elements are in order of their first occurrence in the input.</p>
+<p>Returns <code>NULL</code> if the argument is <code>NULL</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_EXCEPT</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">,</span> <span class="n">arr_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Returns an array of all the distinct elements from an array, except for those also present in a second array. The order of entries in the first array is preserved but duplicates are removed.</p>
+<p>Returns <code>NULL</code> if either input is <code>NULL</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_INTERSECT</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">,</span> <span class="n">arr_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Returns an array of all the distinct elements from the intersection of both input arrays. If the first list contains duplicates, so will the result. If the element is found in both the first and the second list, the element from the first list will be used.</p>
+<p>Returns <code>NULL</code> if either input is <code>NULL</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_UNION</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">,</span> <span class="n">arr_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Returns the array union of the two arrays. Duplicates, and elements of the first list, are removed from the second list, but if the first list contains duplicates, so will the result.</p>
+<p>Returns <code>NULL</code> if either input is <code>NULL</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_JOIN</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">)</span>
+<span class="n">ARRAY_JOIN</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+<p>Creates a flat string representation of all the primitive elements contained in the given array. The elements in the resulting string are separated by the chosen delimiter, which is an optional parameter that falls back to a comma <code>,</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_LENGTH</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Returns the length of a finite list.</p>
+<p>Returns <code>NULL</code> if the argument is <code>NULL</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_MAX</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Returns the maximum value from within a given array of elements.</p>
+<p>Returns <code>NULL</code> if the argument is <code>NULL</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_MIN</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Returns the minimum value from within a given array of elements.</p>
+<p>Returns <code>NULL</code> if the argument is <code>NULL</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_REMOVE</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">,</span> <span class="n">val_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Removes all elements from the input array equal to the second argument.</p>
+<p>Returns <code>NULL</code> if the first argument is <code>NULL</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ARRAY_SORT</span><span class="p">(</span><span class="n">arr_expr</span><span class="p">)</span>
+</code></pre></div>
+<p>Sort an array. Elements are arranged from lowest to highest, keeping duplicates in the order they appeared in the input.</p>
+<p>Returns <code>NULL</code> if the first argument is <code>NULL</code>.</p>
                 
               
               
@@ -1283,7 +1542,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation" rel="prev">
+        <a href="../aggregation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Aggregation Functions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1292,20 +1551,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Installation
+              Aggregation Functions
             </div>
           </div>
         </a>
       
       
         
-        <a href="../stream/" class="md-footer__link md-footer__link--next" aria-label="Next: Streams" rel="next">
+        <a href="../../appendix/" class="md-footer__link md-footer__link--next" aria-label="Next: Appendix" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Streams
+              Appendix
             </div>
           </div>
           <div class="md-footer__button md-icon">
