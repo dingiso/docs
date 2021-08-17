@@ -131,6 +131,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.hstream.io/latest/sql/statements/drop-connector/</loc>
+         <lastmod>2021-08-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.hstream.io/latest/sql/statements/drop-stream/</loc>
+         <lastmod>2021-08-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.hstream.io/latest/sql/statements/drop-view/</loc>
+         <lastmod>2021-08-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.hstream.io/latest/sql/statements/insert/</loc>
          <lastmod>2021-08-17</lastmod>
          <changefreq>daily</changefreq>
