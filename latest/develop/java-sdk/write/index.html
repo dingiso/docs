@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://docs.hstream.io/latest/develop/java-sdk/write/">
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -718,6 +718,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../subscription/" class="md-nav__link">
+        Subscriptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -850,13 +862,6 @@
         <li class="md-nav__item">
   <a href="#buffered-writes-preferred" class="md-nav__link">
     Buffered Writes (Preferred)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#warnings" class="md-nav__link">
-    Warnings
   </a>
   
 </li>
@@ -1347,13 +1352,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#warnings" class="md-nav__link">
-    Warnings
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1378,26 +1376,24 @@
 <li>hstream record(HRecord)</li>
 </ul>
 <h3 id="raw-record">Raw Record<a class="headerlink" href="#raw-record" title="Permanent link">&para;</a></h3>
-<p>Raw record represents arbitray binary data. 
-You can save binary data to a stream, 
-but <strong>please note that currently stream processing via sql ignores binary data, 
-it now only processes <code>HRecord</code> type data.</strong>
-Of course, you can always get the binary data from the stream and process it yourself.</p>
+<p>Raw record represents arbitray binary data. You can save binary data to a
+stream, but <strong>please note that currently stream processing via sql ignores
+binary data, it now only processes <code>HRecord</code> type data.</strong> Of course, you can
+always get the binary data from the stream and process it yourself.</p>
 <h3 id="hrecord">HRecord<a class="headerlink" href="#hrecord" title="Permanent link">&para;</a></h3>
-<p>You can think of an <code>HRecord</code> as a piece of JSON data，
-just like a document in some nosql databases.
-You can process hrecords directly in real time via sql statements.</p>
+<p>You can think of an <code>HRecord</code> as a piece of JSON data， just like a document in
+some nosql databases. You can process hrecords directly in real time via sql
+statements.</p>
 <h2 id="producer">Producer<a class="headerlink" href="#producer" title="Permanent link">&para;</a></h2>
-<p>Before you can write data, you first need to create a <code>Producer</code> object
-using the <code>HStreamClient.newProducer()</code> method:</p>
+<p>Before you can write data, you first need to create a <code>Producer</code> object using
+the <code>HStreamClient.newProducer()</code> method:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Producer</span> <span class="n">producer</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="na">newProducer</span><span class="p">().</span><span class="na">stream</span><span class="p">(</span><span class="s">&quot;test_stream&quot;</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
 </code></pre></div>
-<p>A producer has some options, for now, 
-let's just ignore them and use the default settings.</p>
+<p>A producer has some options, for now, let's just ignore them and use the default
+settings.</p>
 <h2 id="write-binary-data">Write Binary Data<a class="headerlink" href="#write-binary-data" title="Permanent link">&para;</a></h2>
 <h3 id="write-binary-data-synchronously">Write Binary Data Synchronously<a class="headerlink" href="#write-binary-data-synchronously" title="Permanent link">&para;</a></h3>
-<p>You can write binary data synchronously using the <code>Producer.write()</code>
-method:</p>
+<p>You can write binary data synchronously using the <code>Producer.write()</code> method:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
 <span class="kt">byte</span><span class="o">[]</span> <span class="n">rawRecord</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">100</span><span class="o">]</span><span class="p">;</span>
 <span class="n">random</span><span class="p">.</span><span class="na">nextBytes</span><span class="p">(</span><span class="n">rawRecord</span><span class="p">);</span>
@@ -1413,8 +1409,7 @@ method:</p>
 </code></pre></div>
 <h2 id="write-hrecord">Write HRecord<a class="headerlink" href="#write-hrecord" title="Permanent link">&para;</a></h2>
 <h3 id="write-hrecord-synchronously">Write HRecord Synchronously<a class="headerlink" href="#write-hrecord-synchronously" title="Permanent link">&para;</a></h3>
-<p>You can write hrecords synchronously using the <code>Producer.write()</code>
-method:</p>
+<p>You can write hrecords synchronously using the <code>Producer.write()</code> method:</p>
 <div class="highlight"><pre><span></span><code><span class="n">HRecord</span> <span class="n">hRecord</span> <span class="o">=</span> <span class="n">HRecord</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
         <span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;key1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
         <span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;key2&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">)</span>
@@ -1424,19 +1419,18 @@ method:</p>
 <span class="n">RecordId</span> <span class="n">recordId</span> <span class="o">=</span> <span class="n">producer</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">hRecord</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="write-hrecord-asynchronously">Write HRecord Asynchronously<a class="headerlink" href="#write-hrecord-asynchronously" title="Permanent link">&para;</a></h3>
-<p>You can write hrecords asynchronously using the <code>Producer.writeAsync()</code>
-method:</p>
+<p>You can write hrecords asynchronously using the <code>Producer.writeAsync()</code> method:</p>
 <div class="highlight"><pre><span></span><code><span class="n">HRecord</span> <span class="n">hRecord</span> <span class="o">=</span> <span class="n">HRecord</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
         <span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;key1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
         <span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;key2&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">)</span>
         <span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;key3&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
         <span class="p">.</span><span class="na">build</span><span class="p">();</span>
 
-<span class="n">CompletableFuture</span><span class="o">&lt;</span><span class="n">RecordId</span><span class="o">&gt;</span> <span class="n">future</span> <span class="o">=</span> <span class="n">producer</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">hRecord</span><span class="p">);</span>
+<span class="n">CompletableFuture</span><span class="o">&lt;</span><span class="n">RecordId</span><span class="o">&gt;</span> <span class="n">future</span> <span class="o">=</span> <span class="n">producer</span><span class="p">.</span><span class="na">writeAsync</span><span class="p">(</span><span class="n">hRecord</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="buffered-writes-preferred">Buffered Writes (Preferred)<a class="headerlink" href="#buffered-writes-preferred" title="Permanent link">&para;</a></h2>
-<p>When writing to HStreamDB, sending many small records limits throughput.
-To achieve higher thoughput, you can enable batch mode of <code>Producer</code>.</p>
+<p>When writing to HStreamDB, sending many small records limits throughput. To
+achieve higher thoughput, you can enable batch mode of <code>Producer</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">Producer</span> <span class="n">producer</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="na">newProducer</span><span class="p">()</span>
         <span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="s">&quot;test_stream&quot;</span><span class="p">)</span>
         <span class="p">.</span><span class="na">enableBatch</span><span class="p">()</span>
@@ -1454,16 +1448,20 @@ To achieve higher thoughput, you can enable batch mode of <code>Producer</code>.
     <span class="n">recordIdFutures</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">future</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Now the producer will first put the data submitted by the <code>writeAsync</code> method 
-in an internal buffer and send it together to the HStreamDB server 
-when the number reaches <code>recordLimitCount</code>, 
-or you can call <code>flush</code> method manually at any time to flush the buffer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not use a synchronized write method in buffered mode</p>
+</div>
+<p>Now the producer will first put the data submitted by the <code>writeAsync</code> method in
+an internal buffer and send it together to the HStreamDB server when the number
+reaches <code>recordLimitCount</code>, or you can call <code>flush</code> method manually at any time
+to flush the buffer.</p>
 <div class="highlight"><pre><span></span><code><span class="n">producer</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
 </code></pre></div>
-<h2 id="warnings">Warnings<a class="headerlink" href="#warnings" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong> Please do not write both binary data and hrecord in one stream.</strong></li>
-</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please do not write both binary data and hrecord in one stream.</p>
+</div>
                 
               
               
@@ -1488,7 +1486,7 @@ or you can call <code>flush</code> method manually at any time to flush the buff
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../stream/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Streams" rel="prev">
+        <a href="../subscription/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Subscriptions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1497,7 +1495,7 @@ or you can call <code>flush</code> method manually at any time to flush the buff
               <span class="md-footer__direction">
                 Previous
               </span>
-              Streams
+              Subscriptions
             </div>
           </div>
         </a>
@@ -1542,7 +1540,7 @@ or you can call <code>flush</code> method manually at any time to flush the buff
     <script id="__config" type="application/json">{"base": "../../..", "features": ["instant", "navigation.expand", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

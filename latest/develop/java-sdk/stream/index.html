@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://docs.hstream.io/latest/develop/java-sdk/stream/">
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -788,6 +788,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../subscription/" class="md-nav__link">
+        Subscriptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../write/" class="md-nav__link">
         Write Data
       </a>
@@ -1220,8 +1232,8 @@
                 
                 
                 <h1 id="streams">Streams<a class="headerlink" href="#streams" title="Permanent link">&para;</a></h1>
-<p>HStreamDB stores data in streams,
-and this page shows how to operate streams using Java SDK.</p>
+<p>HStreamDB stores data in streams, and this page shows how to operate streams
+using Java SDK.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Make sure you have HStreamDB running and accessible.</li>
@@ -1233,7 +1245,7 @@ and this page shows how to operate streams using Java SDK.</p>
 <h2 id="connect-to-a-hstreamdb-instance">Connect to a HStreamDB Instance<a class="headerlink" href="#connect-to-a-hstreamdb-instance" title="Permanent link">&para;</a></h2>
 <p>First, you need to connect to a HStreaDB instance and get a <code>HStreamClient</code>
 oject.</p>
-<div class="highlight"><pre><span></span><code><span class="n">HStreamClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">HStreamClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">serviceUrl</span><span class="p">(</span><span class="s">&quot;localhost:6570).build();</span>
+<div class="highlight"><pre><span></span><code><span class="n">HStreamClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">HStreamClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">serviceUrl</span><span class="p">(</span><span class="s">&quot;SERVER_HOST:SERVER_PORT).build();</span>
 </code></pre></div>
 <h2 id="get-a-list-of-streams">Get a List of Streams<a class="headerlink" href="#get-a-list-of-streams" title="Permanent link">&para;</a></h2>
 <p>You can get a list of the streams using the <code>HStreamClient.listStreams()</code>
@@ -1243,13 +1255,11 @@ method:</p>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="create-a-new-stream">Create a New Stream<a class="headerlink" href="#create-a-new-stream" title="Permanent link">&para;</a></h2>
-<p>You can create a new stream using the <code>HStreamClient.createStream()</code>
-method:</p>
+<p>You can create a new stream using the <code>HStreamClient.createStream()</code> method:</p>
 <div class="highlight"><pre><span></span><code><span class="n">client</span><span class="p">.</span><span class="na">createStream</span><span class="p">(</span><span class="s">&quot;test_stream&quot;</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="delete-a-stream">Delete a Stream<a class="headerlink" href="#delete-a-stream" title="Permanent link">&para;</a></h2>
-<p>You can delete a stream using the <code>HStreamClient.deleteStream()</code>
-method:</p>
+<p>You can delete a stream using the <code>HStreamClient.deleteStream()</code> method:</p>
 <div class="highlight"><pre><span></span><code><span class="n">client</span><span class="p">.</span><span class="na">deleteStream</span><span class="p">(</span><span class="s">&quot;test_stream&quot;</span><span class="p">);</span>
 </code></pre></div>
                 
@@ -1292,13 +1302,13 @@ method:</p>
       
       
         
-        <a href="../write/" class="md-footer__link md-footer__link--next" aria-label="Next: Write Data" rel="next">
+        <a href="../subscription/" class="md-footer__link md-footer__link--next" aria-label="Next: Subscriptions" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Write Data
+              Subscriptions
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1330,7 +1340,7 @@ method:</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["instant", "navigation.expand", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

@@ -9,21 +9,21 @@
       
       
       
-        <link rel="canonical" href="https://docs.hstream.io/latest/deployment/deploy-k8s/">
+        <link rel="canonical" href="https://docs.hstream.io/latest/develop/java-sdk/subscription/">
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
-        <title>Running on Kubernetes - HStreamDB Docs</title>
+        <title>Subscriptions - HStreamDB Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -52,7 +52,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#running-on-kubernetes" class="md-skip">
+        <a href="#subscription" class="md-skip">
           Skip to content
         </a>
       
@@ -73,9 +73,9 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="HStreamDB Docs" class="md-header__button md-logo" aria-label="HStreamDB Docs" data-md-component="logo">
+    <a href="../../.." title="HStreamDB Docs" class="md-header__button md-logo" aria-label="HStreamDB Docs" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Running on Kubernetes
+              Subscriptions
             
           </span>
         </div>
@@ -217,7 +217,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../overview/overview/" class="md-tabs__link">
+      <a href="../../../overview/overview/" class="md-tabs__link">
         Overview
       </a>
     </li>
@@ -233,7 +233,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../start/quickstart-with-docker/" class="md-tabs__link">
+      <a href="../../../start/quickstart-with-docker/" class="md-tabs__link">
         Getting started
       </a>
     </li>
@@ -242,6 +242,8 @@
       
         
   
+  
+    
   
 
 
@@ -254,7 +256,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../develop/java-sdk/installation/" class="md-tabs__link">
+      <a href="../installation/" class="md-tabs__link md-tabs__link--active">
         Develop
       </a>
     </li>
@@ -266,15 +268,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../deployment/deploy-k8s/" class="md-tabs__link">
         Deployment
       </a>
     </li>
@@ -290,7 +290,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../sql/sql-overview/" class="md-tabs__link">
+      <a href="../../../sql/sql-overview/" class="md-tabs__link">
         HStreamDB SQL
       </a>
     </li>
@@ -306,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../connector/overview/" class="md-tabs__link">
+      <a href="../../../connector/overview/" class="md-tabs__link">
         Connector
       </a>
     </li>
@@ -322,7 +322,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../contributing/haskell-style/" class="md-tabs__link">
+      <a href="../../../contributing/haskell-style/" class="md-tabs__link">
         Contributing
       </a>
     </li>
@@ -349,9 +349,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="HStreamDB Docs" class="md-nav__button md-logo" aria-label="HStreamDB Docs" data-md-component="logo">
+    <a href="../../.." title="HStreamDB Docs" class="md-nav__button md-logo" aria-label="HStreamDB Docs" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     HStreamDB Docs
@@ -401,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/overview/" class="md-nav__link">
+      <a href="../../../overview/overview/" class="md-nav__link">
         HStream Streaming Database Overview
       </a>
     </li>
@@ -434,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/concepts/stream/" class="md-nav__link">
+      <a href="../../../overview/concepts/stream/" class="md-nav__link">
         Stream and Streaming Data
       </a>
     </li>
@@ -473,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/architecture/overview/" class="md-nav__link">
+      <a href="../../../overview/architecture/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -485,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/architecture/hstream-store/" class="md-nav__link">
+      <a href="../../../overview/architecture/hstream-store/" class="md-nav__link">
         HStream Store (HStore)
       </a>
     </li>
@@ -497,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/architecture/hstream-server/" class="md-nav__link">
+      <a href="../../../overview/architecture/hstream-server/" class="md-nav__link">
         HStream Server (HSQL)
       </a>
     </li>
@@ -515,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/features/" class="md-nav__link">
+      <a href="../../../overview/features/" class="md-nav__link">
         Features
       </a>
     </li>
@@ -527,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/release-notes/" class="md-nav__link">
+      <a href="../../../overview/release-notes/" class="md-nav__link">
         Release Notes
       </a>
     </li>
@@ -539,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/learning-resouces/" class="md-nav__link">
+      <a href="../../../overview/learning-resouces/" class="md-nav__link">
         Learning Resources
       </a>
     </li>
@@ -581,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start/quickstart-with-docker/" class="md-nav__link">
+      <a href="../../../start/quickstart-with-docker/" class="md-nav__link">
         Quickstart with Docker
       </a>
     </li>
@@ -593,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start/cli/" class="md-nav__link">
+      <a href="../../../start/cli/" class="md-nav__link">
         CLI usage
       </a>
     </li>
@@ -605,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start/configuration-overview/" class="md-nav__link">
+      <a href="../../../start/configuration-overview/" class="md-nav__link">
         Configurarion Overview
       </a>
     </li>
@@ -617,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start/dashboard-overview/" class="md-nav__link">
+      <a href="../../../start/dashboard-overview/" class="md-nav__link">
         Dashboard Overview
       </a>
     </li>
@@ -636,12 +636,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Develop
@@ -657,12 +659,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
       
       <label class="md-nav__link" for="__nav_3_1">
         Java SDK
@@ -680,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -692,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/connect/" class="md-nav__link">
+      <a href="../connect/" class="md-nav__link">
         Connect
       </a>
     </li>
@@ -704,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/stream/" class="md-nav__link">
+      <a href="../stream/" class="md-nav__link">
         Streams
       </a>
     </li>
@@ -714,11 +718,86 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../develop/java-sdk/subscription/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Subscriptions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Subscriptions
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    Concepts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-object" class="md-nav__link">
+    Subscription Object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-subscription" class="md-nav__link">
+    Create a New Subscription
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-a-list-of-subscriptions" class="md-nav__link">
+    Get a List of Subscriptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-a-subscription" class="md-nav__link">
+    Delete a Subscription
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -728,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/write/" class="md-nav__link">
+      <a href="../write/" class="md-nav__link">
         Write Data
       </a>
     </li>
@@ -740,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/consume/" class="md-nav__link">
+      <a href="../consume/" class="md-nav__link">
         Consume Data
       </a>
     </li>
@@ -752,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/query/" class="md-nav__link">
+      <a href="../query/" class="md-nav__link">
         Stream Processing with SQL
       </a>
     </li>
@@ -777,14 +856,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Deployment
@@ -800,106 +877,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Running on Kubernetes
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../deployment/deploy-k8s/" class="md-nav__link">
         Running on Kubernetes
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#building-your-kubernetes-cluster" class="md-nav__link">
-    Building your Kubernetes Cluster
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-zookeeper" class="md-nav__link">
-    Install Zookeeper
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-and-starting-hstreamdb" class="md-nav__link">
-    Configuring and Starting HStreamDB
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuring and Starting HStreamDB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fetching-the-k8s-specs" class="md-nav__link">
-    Fetching The K8s Specs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-configuration" class="md-nav__link">
-    Update Configuration
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#starting-the-cluster" class="md-nav__link">
-    Starting the Cluster
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bootstrapping-the-storage-cluster" class="md-nav__link">
-    Bootstrapping the Storage Cluster
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#managing-the-storage-cluster" class="md-nav__link">
-    Managing the Storage Cluster
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -939,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/sql-overview/" class="md-nav__link">
+      <a href="../../../sql/sql-overview/" class="md-nav__link">
         HStreamDB SQL overview
       </a>
     </li>
@@ -951,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/sql-quick-reference/" class="md-nav__link">
+      <a href="../../../sql/sql-quick-reference/" class="md-nav__link">
         HStreamDB SQL quick reference
       </a>
     </li>
@@ -984,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/create-stream/" class="md-nav__link">
+      <a href="../../../sql/statements/create-stream/" class="md-nav__link">
         CREATE STREAM
       </a>
     </li>
@@ -996,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/create-view/" class="md-nav__link">
+      <a href="../../../sql/statements/create-view/" class="md-nav__link">
         CREATE VIEW
       </a>
     </li>
@@ -1008,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/create-connector/" class="md-nav__link">
+      <a href="../../../sql/statements/create-connector/" class="md-nav__link">
         CREATE CONNECTOR
       </a>
     </li>
@@ -1020,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/select-stream/" class="md-nav__link">
+      <a href="../../../sql/statements/select-stream/" class="md-nav__link">
         SELECT (Stream)
       </a>
     </li>
@@ -1032,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/select-view/" class="md-nav__link">
+      <a href="../../../sql/statements/select-view/" class="md-nav__link">
         SELECT (View)
       </a>
     </li>
@@ -1044,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/insert/" class="md-nav__link">
+      <a href="../../../sql/statements/insert/" class="md-nav__link">
         INSERT
       </a>
     </li>
@@ -1062,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/appendix/" class="md-nav__link">
+      <a href="../../../sql/appendix/" class="md-nav__link">
         Appendix
       </a>
     </li>
@@ -1104,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connector/overview/" class="md-nav__link">
+      <a href="../../../connector/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1116,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connector/use/" class="md-nav__link">
+      <a href="../../../connector/use/" class="md-nav__link">
         Use
       </a>
     </li>
@@ -1158,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contributing/haskell-style/" class="md-nav__link">
+      <a href="../../../contributing/haskell-style/" class="md-nav__link">
         Haskell style
       </a>
     </li>
@@ -1170,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contributing/build-from-source/" class="md-nav__link">
+      <a href="../../../contributing/build-from-source/" class="md-nav__link">
         Building from source
       </a>
     </li>
@@ -1209,63 +1191,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#building-your-kubernetes-cluster" class="md-nav__link">
-    Building your Kubernetes Cluster
+  <a href="#concepts" class="md-nav__link">
+    Concepts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-zookeeper" class="md-nav__link">
-    Install Zookeeper
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuring-and-starting-hstreamdb" class="md-nav__link">
-    Configuring and Starting HStreamDB
+  <a href="#subscription-object" class="md-nav__link">
+    Subscription Object
   </a>
-  
-    <nav class="md-nav" aria-label="Configuring and Starting HStreamDB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fetching-the-k8s-specs" class="md-nav__link">
-    Fetching The K8s Specs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-configuration" class="md-nav__link">
-    Update Configuration
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#starting-the-cluster" class="md-nav__link">
-    Starting the Cluster
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bootstrapping-the-storage-cluster" class="md-nav__link">
-    Bootstrapping the Storage Cluster
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-the-storage-cluster" class="md-nav__link">
-    Managing the Storage Cluster
+  <a href="#create-a-new-subscription" class="md-nav__link">
+    Create a New Subscription
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-a-list-of-subscriptions" class="md-nav__link">
+    Get a List of Subscriptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-a-subscription" class="md-nav__link">
+    Delete a Subscription
   </a>
   
 </li>
@@ -1283,150 +1245,67 @@
               
                 
                 
-                <h1 id="running-on-kubernetes">Running on Kubernetes<a class="headerlink" href="#running-on-kubernetes" title="Permanent link">&para;</a></h1>
-<p>This document describes how to run HStreamDB kubernetes using the specs that we
-provide. The document assumes basic previous kubernetes knowledge. By the end of
-this section, you'll have a fully running HStreamDB cluster on kubernetes that's
-ready to receive reads/writes, process datas, etc.</p>
-<h2 id="building-your-kubernetes-cluster">Building your Kubernetes Cluster<a class="headerlink" href="#building-your-kubernetes-cluster" title="Permanent link">&para;</a></h2>
-<p>The first step is to have a running kubernetes cluster. You can use a managed
-cluster (provided by your cloud provider), a self-hosted cluster or a local
-kubernetes cluster using a tool like minikube. Make sure that kubectl points to
-whatever cluster you're planning to use.</p>
-<p>Also, you need a storageClass named <code>hstream-store</code>, you can create by <code>kubectl</code>
-or by your cloud provider web page if it has.</p>
-<h2 id="install-zookeeper">Install Zookeeper<a class="headerlink" href="#install-zookeeper" title="Permanent link">&para;</a></h2>
-<p>HStreamDB depends on Zookeeper for storing queries information and some internal
-storage configuration. So we will need to provision a zookeeper ensemble that
-HStreamDB will be able to access. For this demo, we will use
-<a href="https://helm.sh/">helm</a> (A package manager for kubernetes) to install
-zookeeper. After installing helm run:</p>
-<div class="highlight"><pre><span></span><code>helm repo add bitnami https://charts.bitnami.com/bitnami
-helm repo update
-
-helm install zookeeper bitnami/zookeeper <span class="se">\</span>
-  --set image.tag<span class="o">=</span><span class="m">3</span>.6.3 <span class="se">\</span>
-  --set <span class="nv">replicaCount</span><span class="o">=</span><span class="m">3</span> <span class="se">\</span>
-  --set persistence.storageClass<span class="o">=</span>hstream-store <span class="se">\</span>
-  --set persistence.size<span class="o">=</span>20Gi
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>NAME: zookeeper
-LAST DEPLOYED: Tue Jul  6 10:51:37 2021
-NAMESPACE: test
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-NOTES:
-** Please be patient while the chart is being deployed **
-
-ZooKeeper can be accessed via port 2181 on the following DNS name from within your cluster:
-
-    zookeeper.svc.cluster.local
-
-To connect to your ZooKeeper server run the following commands:
-
-    export POD_NAME=$(kubectl get pods -l &quot;app.kubernetes.io/name=zookeeper,app.kubernetes.io/instance=zookeeper,app.kubernetes.io/component=zookeeper&quot; -o jsonpath=&quot;{.items[0].metadata.name}&quot;)
-    kubectl exec -it $POD_NAME -- zkCli.sh
-
-To connect to your ZooKeeper server from outside the cluster execute the following commands:
-
-    kubectl port-forward svc/zookeeper 2181:2181 &amp;
-    zkCli.sh 127.0.0.1:2181
-WARNING: Rolling tag detected (bitnami/zookeeper:3.6.3), please note that it is strongly recommended to avoid using rolling tags in a production environment.
-+info https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/
-</code></pre></div>
-<p>This will by default install a 3 nodes zookeeper ensemble. Wait until all the
-three pods are marked as ready:</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>NAME         READY   STATUS    RESTARTS   AGE
-zookeeper-0  1/1     Running   0          22h
-zookeeper-1  1/1     Running   0          4d22h
-zookeeper-2  1/1     Running   0          16m
-</code></pre></div>
-<h2 id="configuring-and-starting-hstreamdb">Configuring and Starting HStreamDB<a class="headerlink" href="#configuring-and-starting-hstreamdb" title="Permanent link">&para;</a></h2>
-<p>Once all the zookeeper pods are ready, we're ready to start installing the
-HStreamDB cluster.</p>
-<h3 id="fetching-the-k8s-specs">Fetching The K8s Specs<a class="headerlink" href="#fetching-the-k8s-specs" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>git clone git@github.com:hstreamdb/hstream.git
-<span class="nb">cd</span> hstream/k8s
-</code></pre></div>
-<h3 id="update-configuration">Update Configuration<a class="headerlink" href="#update-configuration" title="Permanent link">&para;</a></h3>
-<p>If you used a different way to install zookeeper, make sure to update the
-zookeeper connection string in storage config file <code>config.json</code> and server
-service file <code>hstream-server.yaml</code>.</p>
-<p>It should look something like this:</p>
-<div class="highlight"><pre><span></span><code>$ cat config.json <span class="p">|</span> grep -A <span class="m">2</span> zookeeper
-  <span class="s2">&quot;zookeeper&quot;</span>: <span class="o">{</span>
-    <span class="s2">&quot;zookeeper_uri&quot;</span>: <span class="s2">&quot;ip://zookeeper-0.zookeeper-headless:2181,zookeeper-1.zookeeper-headless:2181,zookeeper-2.zookeeper-headless:2181&quot;</span>,
-    <span class="s2">&quot;timeout&quot;</span>: <span class="s2">&quot;30s&quot;</span>
-  <span class="o">}</span>
-
-$ cat hstream-server.yaml <span class="p">|</span> grep -A <span class="m">1</span> zkuri
-            - <span class="s2">&quot;--zkuri&quot;</span>
-            - <span class="s2">&quot;zookeeper-0.zookeeper-headless:2181,zookeeper-1.zookeeper-headless:2181,zookeeper-2.zookeeper-headless:2181&quot;</span>
-</code></pre></div>
+                <h1 id="subscription">Subscription<a class="headerlink" href="#subscription" title="Permanent link">&para;</a></h1>
+<p>In HStramDB, subscription is also seen as a persistent resource which enabling
+decoupling between the consumer and the stream. User can create、delete and list
+subscriptions.</p>
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
+<p>HStreamDB uses subscription to manage the progress information of consumption
+(e.g. checkpoint, offset). For consumer to consume the data, it <strong>must join</strong> a
+subscription that <strong>already exists</strong>.</p>
 <div class="admonition tips">
 <p class="admonition-title">Tips</p>
-<p>The zookeeper connection string in stotage config file and the service file
-can be different. But for normal scenario, they are the same.</p>
+<p>Currently, only one consumer is allowed to join the same subscription at a time.</p>
 </div>
-<p>By default, this spec installs a 3 nodes HStream server cluster and 4 nodes
-storage cluster. If you want a bigger cluster, modify the <code>hstream-server.yaml</code>
-and <code>logdevice-statefulset.yaml</code> file, and increase the number of replicas to
-the number of nodes you want in the cluster. Also by default, we attach a 40GB
-persistent storage to the nodes, if you want more you can change that under the
-volumeClaimTemplates section.</p>
-<h3 id="starting-the-cluster">Starting the Cluster<a class="headerlink" href="#starting-the-cluster" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl apply -k .
-</code></pre></div>
-<p>When you run <code>kubectl get pods</code>, you should see something like this:</p>
-<div class="highlight"><pre><span></span><code>NAME                                                 READY   STATUS    RESTARTS   AGE
-hstream-server-deployment-765c84c489-94nqd           1/1     Running   0          6d18h
-hstream-server-deployment-765c84c489-jrm5p           1/1     Running   0          6d18h
-hstream-server-deployment-765c84c489-jxsjd           1/1     Running   0          6d18h
-logdevice-0                                          1/1     Running   0          6d18h
-logdevice-1                                          1/1     Running   0          6d18h
-logdevice-2                                          1/1     Running   0          6d18h
-logdevice-3                                          1/1     Running   0          6d18h
-logdevice-admin-server-deployment-5c5fb9f8fb-27jlk   1/1     Running   0          6d18h
-zookeeper-0                                          1/1     Running   0          6d22h
-zookeeper-1                                          1/1     Running   0          10d
-zookeeper-2                                          1/1     Running   0          6d
-</code></pre></div>
-<h3 id="bootstrapping-the-storage-cluster">Bootstrapping the Storage Cluster<a class="headerlink" href="#bootstrapping-the-storage-cluster" title="Permanent link">&para;</a></h3>
-<p>Once all the logdevice pods are running and ready, you'll need to bootstrap the
-cluster to enable all the nodes. To do that, run:</p>
-<div class="highlight"><pre><span></span><code>kubectl run hadmin -it --rm --restart<span class="o">=</span>Never --image<span class="o">=</span>hstreamdb/hstream -- <span class="se">\</span>
-    hadmin --host logdevice-admin-server-service <span class="se">\</span>
-    nodes-config <span class="se">\</span>
-    bootstrap --metadata-replicate-across <span class="s1">&#39;node:3&#39;</span>
-</code></pre></div>
-<p>This will start a hadmin pod, that connects to the admin server and invokes the
-<code>nodes-config bootstrap</code> hadmin command and sets the metadata replication
-property of the cluster to be replicated across three different nodes. On
-success, you should see something like:</p>
-<div class="highlight"><pre><span></span><code>Successfully bootstrapped the cluster
-pod &quot;hadmin&quot; deleted
-</code></pre></div>
-<h2 id="managing-the-storage-cluster">Managing the Storage Cluster<a class="headerlink" href="#managing-the-storage-cluster" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>kubectl run hadmin -it --rm --restart<span class="o">=</span>Never --image<span class="o">=</span>hstreamdb/hstream -- bash
-</code></pre></div>
-<p>Now you can run <code>hadmin</code> to manage the cluster:</p>
-<div class="highlight"><pre><span></span><code>hadmin --help
-</code></pre></div>
-<p>To check the state of the cluster, you can then run:</p>
-<div class="highlight"><pre><span></span><code>hadmin --host logdevice-admin-server-service status
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Make sure you have HStreamDB running and accessible.</p>
+<h2 id="subscription-object">Subscription Object<a class="headerlink" href="#subscription-object" title="Permanent link">&para;</a></h2>
+<p>A subscription object is defined in protobuf:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">message</span> <span class="nc">Subscription</span> <span class="p">{</span>
+  <span class="kt">string</span> <span class="na">subscriptionId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// the unique identifier of the subscription</span>
+  <span class="kt">string</span> <span class="na">streamName</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// streams to be consumed</span>
+  <span class="n">SubscriptionOffset</span> <span class="na">offset</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// the starting position of consumption</span>
+<span class="p">}</span>
 
-+----+-------------+-------+---------------+
-| ID |    NAME     | STATE | HEALTH STATUS |
-+----+-------------+-------+---------------+
-| 0  | logdevice-0 | ALIVE | HEALTHY       |
-| 1  | logdevice-1 | ALIVE | HEALTHY       |
-| 2  | logdevice-2 | ALIVE | HEALTHY       |
-| 3  | logdevice-3 | ALIVE | HEALTHY       |
-+----+-------------+-------+---------------+
-Took 2.567s
+<span class="kd">message</span> <span class="nc">SubscriptionOffset</span> <span class="p">{</span>
+  <span class="kd">enum</span> <span class="n">SpecialOffset</span> <span class="p">{</span>
+    <span class="na">EARLIST</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// consume from the start of the stream</span>
+    <span class="na">LATEST</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// consume from the tail of the stream</span>
+  <span class="p">}</span>
+
+  <span class="k">oneof</span> <span class="n">offset</span> <span class="p">{</span>
+    <span class="n">SpecialOffset</span> <span class="na">specialOffset</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">RecordId</span> <span class="na">recordOffset</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// consume from a customer specified position</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="create-a-new-subscription">Create a New Subscription<a class="headerlink" href="#create-a-new-subscription" title="Permanent link">&para;</a></h2>
+<p>You can create a new subscription using the
+<code>HStreamClient.createSubscription(Subscription)</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Subscription</span> <span class="n">subscription</span> <span class="o">=</span> <span class="n">Subscription</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">setSubscriptionId</span><span class="p">(</span><span class="s">&quot;test_subscription&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setStreamName</span><span class="p">(</span><span class="s">&quot;test_stream&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setOffset</span><span class="p">(</span>
+        <span class="n">SubscriptionOffset</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+            <span class="p">.</span><span class="na">setSpecialOffset</span><span class="p">(</span><span class="n">SubscriptionOffset</span><span class="p">.</span><span class="na">SpecialOffset</span><span class="p">.</span><span class="na">LATEST</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">build</span><span class="p">())</span>
+    <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+<span class="n">client</span><span class="p">.</span><span class="na">createSubscription</span><span class="p">(</span><span class="n">subscription</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="get-a-list-of-subscriptions">Get a List of Subscriptions<a class="headerlink" href="#get-a-list-of-subscriptions" title="Permanent link">&para;</a></h2>
+<p>You can get a list of the subscriptions using the
+<code>HStreamClient.listSubscriptions()</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Subscription</span><span class="o">&gt;</span> <span class="n">subscriptions</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="na">listSubscriptions</span><span class="p">();</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">Subscription</span> <span class="n">subscription</span> <span class="p">:</span> <span class="n">subscriptions</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">subscription</span><span class="p">);</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">subscription</span><span class="p">.</span><span class="na">getSubscriptionId</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="delete-a-subscription">Delete a Subscription<a class="headerlink" href="#delete-a-subscription" title="Permanent link">&para;</a></h2>
+<p>You can delete a subscription using the <code>HStreamClient.deleteSubscription()</code>
+method:</p>
+<div class="highlight"><pre><span></span><code><span class="n">client</span><span class="p">.</span><span class="na">deleteSubscription</span><span class="p">(</span><span class="s">&quot;test_subscription&quot;</span><span class="p">);</span>
 </code></pre></div>
                 
               
@@ -1452,7 +1331,7 @@ Took 2.567s
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../develop/java-sdk/query/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Stream Processing with SQL" rel="prev">
+        <a href="../stream/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Streams" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1461,20 +1340,20 @@ Took 2.567s
               <span class="md-footer__direction">
                 Previous
               </span>
-              Stream Processing with SQL
+              Streams
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../sql/sql-overview/" class="md-footer__link md-footer__link--next" aria-label="Next: HStreamDB SQL overview" rel="next">
+        <a href="../write/" class="md-footer__link md-footer__link--next" aria-label="Next: Write Data" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              HStreamDB SQL overview
+              Write Data
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1503,10 +1382,10 @@ Took 2.567s
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant", "navigation.expand", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["instant", "navigation.expand", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

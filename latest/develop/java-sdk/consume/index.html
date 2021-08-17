@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://docs.hstream.io/latest/develop/java-sdk/consume/">
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -720,6 +720,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../subscription/" class="md-nav__link">
+        Subscriptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../write/" class="md-nav__link">
         Write Data
       </a>
@@ -772,22 +784,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consumer" class="md-nav__link">
-    Consumer
+  <a href="#concepts" class="md-nav__link">
+    Concepts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#receive-raw-records" class="md-nav__link">
-    Receive Raw Records
+  <a href="#consume-records" class="md-nav__link">
+    Consume Records
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#receive-hrecords" class="md-nav__link">
-    Receive HRecords
+  <a href="#responder" class="md-nav__link">
+    Responder
   </a>
   
 </li>
@@ -1172,22 +1184,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consumer" class="md-nav__link">
-    Consumer
+  <a href="#concepts" class="md-nav__link">
+    Concepts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#receive-raw-records" class="md-nav__link">
-    Receive Raw Records
+  <a href="#consume-records" class="md-nav__link">
+    Consume Records
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#receive-hrecords" class="md-nav__link">
-    Receive HRecords
+  <a href="#responder" class="md-nav__link">
+    Responder
   </a>
   
 </li>
@@ -1209,37 +1221,55 @@
 <p>This page shows how to consume data from HStreamDB using Java SDK.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Make sure you have HStreamDB running and accessible.</p>
-<h2 id="consumer">Consumer<a class="headerlink" href="#consumer" title="Permanent link">&para;</a></h2>
-<p>Before you can consume data, you first need to create a <code>Consumer</code> object
-using the <code>HStreamClient.newConsumer()</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Consumer</span> <span class="n">consumer</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="na">newConsumer</span><span class="p">()</span>
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
+<p>A client can consume data from a consumer object. A consumer object will join a
+subscription with a subscriptionID, and then the client can fetch data from the
+subscribed stream.</p>
+<p>Each consumer object will contain a <code>RawRecordReceiver</code> and a <code>HRecordReceiver</code>,
+so users can consume raw records or HRecords according to their needs.</p>
+<p>With consumer, the client will continuously fetch data from the subscription in
+a background thread, also the client will periodically send heartbeats to the
+server to maintain the subscription.</p>
+<h2 id="consume-records">Consume Records<a class="headerlink" href="#consume-records" title="Permanent link">&para;</a></h2>
+<p>You can consume records like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Consumer</span> <span class="n">consumer</span> <span class="o">=</span>
+    <span class="n">client</span>
+        <span class="p">.</span><span class="na">newConsumer</span><span class="p">()</span>
         <span class="p">.</span><span class="na">subscription</span><span class="p">(</span><span class="s">&quot;test_subscription&quot;</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="s">&quot;test_stream&quot;</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">maxPollRecords</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">pollTimeoutMs</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">rawRecordReceiver</span><span class="p">((</span><span class="n">receivedRawRecord</span><span class="p">,</span> <span class="n">responder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="c1">// You can execute some callback function here.</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">Println</span><span class="p">(</span><span class="s">&quot;Received Raw Record: &quot;</span> <span class="o">+</span> <span class="n">receivedRawRecord</span><span class="p">.</span><span class="na">getRecordId</span><span class="p">())</span>
+        <span class="p">})</span>
         <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="n">consumer</span><span class="p">.</span><span class="na">startAsync</span><span class="p">().</span><span class="na">awaitRunning</span><span class="p">();</span>
+
+<span class="c1">// after you consume enough data, you can stop the consumer</span>
+<span class="n">consumer</span><span class="p">.</span><span class="na">stopAsync</span><span class="p">().</span><span class="na">awaitTerminated</span><span class="p">();</span>
 </code></pre></div>
-<p>A consumer must be associated with a subscription, and a subscription contains a
-stream.</p>
-<p>Once the consumer is created successfully, it can be used to continuously
-receive data from the subscribed stream.</p>
-<h2 id="receive-raw-records">Receive Raw Records<a class="headerlink" href="#receive-raw-records" title="Permanent link">&para;</a></h2>
-<p>You can receive receive raw records using the <code>Consumer.pollRawRecords()</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">ReceivedRawRecord</span><span class="o">&gt;</span> <span class="n">receivedRawRecords</span> <span class="o">=</span> <span class="n">consumer</span><span class="p">.</span><span class="na">pollRawRecords</span><span class="p">();</span>
-    <span class="k">for</span><span class="p">(</span><span class="n">ReceivedRawRecord</span> <span class="n">receivedRawRecord</span><span class="p">:</span> <span class="n">receivedRawRecords</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">receivedRawRecord</span><span class="p">.</span><span class="na">getRecordId</span><span class="p">());</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="receive-hrecords">Receive HRecords<a class="headerlink" href="#receive-hrecords" title="Permanent link">&para;</a></h2>
-<p>You can receive receive hrecords using the <code>Consumer.pollHRecords()</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">ReceivedHRecord</span><span class="o">&gt;</span> <span class="n">receivedHRecords</span> <span class="o">=</span> <span class="n">consumer</span><span class="p">.</span><span class="na">pollHRecords</span><span class="p">();</span>
-    <span class="k">for</span><span class="p">(</span><span class="n">ReceivedHRecord</span> <span class="n">receivedHRecord</span><span class="p">:</span> <span class="n">receivedHRecords</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">receivedHRecord</span><span class="p">.</span><span class="na">getRecordId</span><span class="p">());</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<ul>
+<li>the example use <code>rawRecordReceiver()</code> to consume raw records, if you want to
+  consume HReacord, just use <code>hRecordReceiver()</code> instead.</li>
+</ul>
+<h2 id="responder">Responder<a class="headerlink" href="#responder" title="Permanent link">&para;</a></h2>
+<p>HStreamDB support <code>checkpoint</code>. Consumer can use responder to ack server and
+commit a checkpoint when it receives data from server.</p>
+<div class="highlight"><pre><span></span><code><span class="n">AtomicInteger</span> <span class="n">consumedCount</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="p">();</span>
+<span class="n">Consumer</span> <span class="n">consumer</span> <span class="o">=</span>
+    <span class="n">client</span>
+        <span class="p">.</span><span class="na">newConsumer</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">subscription</span><span class="p">(</span><span class="s">&quot;test_subscription&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">hRecordReceiver</span><span class="p">((</span><span class="n">receivedHRecord</span><span class="p">,</span> <span class="n">responder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+           <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;enter process, count is &quot;</span> <span class="o">+</span> <span class="n">consumedCount</span><span class="p">.</span><span class="na">incrementAndGet</span><span class="p">());</span>
+           <span class="k">if</span> <span class="p">(</span><span class="n">consumedCount</span><span class="p">.</span><span class="na">get</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+             <span class="n">responder</span><span class="p">.</span><span class="na">ack</span><span class="p">();</span>
+             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;finished ack&quot;</span><span class="p">);</span>
+           <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="n">consumer</span><span class="p">.</span><span class="na">startAsync</span><span class="p">().</span><span class="na">awaitRunning</span><span class="p">();</span>
+
+<span class="c1">// after you consume enough data, you can stop the consumer</span>
+<span class="n">consumer</span><span class="p">.</span><span class="na">stopAsync</span><span class="p">().</span><span class="na">awaitTerminated</span><span class="p">();</span>
 </code></pre></div>
                 
               
@@ -1319,7 +1349,7 @@ receive data from the subscribed stream.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["instant", "navigation.expand", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>

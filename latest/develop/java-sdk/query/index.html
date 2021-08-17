@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://docs.hstream.io/latest/develop/java-sdk/query/">
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.3">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -720,6 +720,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../subscription/" class="md-nav__link">
+        Subscriptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../write/" class="md-nav__link">
         Write Data
       </a>
@@ -1178,40 +1190,47 @@
                 
                 
                 <h1 id="stream-processing-with-sql">Stream Processing with SQL<a class="headerlink" href="#stream-processing-with-sql" title="Permanent link">&para;</a></h1>
-<p>This page shows how to processing stream data in HStreamDB with SQL using Java SDK.</p>
+<p>This page shows how to processing stream data in HStreamDB with SQL using Java
+SDK.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Make sure you have HStreamDB running and accessible.</p>
 <h2 id="execute-real-time-query-on-stream">Execute Real-time Query on Stream<a class="headerlink" href="#execute-real-time-query-on-stream" title="Permanent link">&para;</a></h2>
-<p>You can execute a real-time query on stream using the <code>HStreamClient.streamQuery()</code> method:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">final</span> <span class="n">String</span> <span class="n">TEST_STREAM</span> <span class="o">=</span> <span class="s">&quot;test_stream&quot;</span><span class="p">;</span>
+<p>Here is an example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Observer</span><span class="o">&lt;</span><span class="n">HRecord</span><span class="o">&gt;</span> <span class="n">observer</span> <span class="o">=</span>
+    <span class="k">new</span> <span class="n">Observer</span><span class="o">&lt;</span><span class="n">HRecord</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNext</span><span class="p">(</span><span class="n">HRecord</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;get hrecord: {}&quot;</span> <span class="o">+</span> <span class="n">value</span><span class="p">);</span>
+      <span class="p">}</span>
 
-<span class="n">Publisher</span><span class="o">&lt;</span><span class="n">HRecord</span><span class="o">&gt;</span> <span class="n">publisher</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="na">streamQuery</span><span class="p">(</span>
-        <span class="s">&quot;select * from &quot;</span> <span class="o">+</span> <span class="n">TEST_STREAM</span> <span class="o">+</span>
-        <span class="s">&quot; where temperature &gt; 30 emit changes;&quot;</span>
-<span class="p">);</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="p">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;error!&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
 
-<span class="n">Observer</span><span class="o">&lt;</span><span class="n">HRecord</span><span class="o">&gt;</span> <span class="n">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Observer</span><span class="o">&lt;</span><span class="n">HRecord</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNext</span><span class="p">(</span><span class="n">HRecord</span> <span class="n">hrecord</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">hrecord</span><span class="p">);</span>
-    <span class="p">}</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCompleted</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="p">};</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="p">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="n">Queryer</span> <span class="n">queryer</span> <span class="o">=</span>
+    <span class="n">client</span>
+        <span class="p">.</span><span class="na">newQueryer</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">sql</span><span class="p">(</span><span class="s">&quot;select * from test_stream where temperature &gt; 30 emit changes;&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">resultObserver</span><span class="p">(</span><span class="n">observer</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">build</span><span class="p">();</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCompleted</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// queryer will fetch real-time data at background</span>
+<span class="n">queryer</span><span class="p">.</span><span class="na">startAsync</span><span class="p">().</span><span class="na">awaitRunning</span><span class="p">();</span>
 
-    <span class="p">}</span>
-<span class="p">};</span>
+<span class="c1">// ... execute query for some time ...</span>
 
-<span class="n">publisher</span><span class="p">.</span><span class="na">subscribe</span><span class="p">(</span><span class="n">observer</span><span class="p">);</span>
+<span class="c1">// finally, you can stop the queryer using queryer.stopAsync()</span>
+<span class="n">queryer</span><span class="p">.</span><span class="na">stopAsync</span><span class="p">().</span><span class="na">awaitTerminated</span><span class="p">();</span>
 </code></pre></div>
-<p>The <code>HStreamClient.streamQuery()</code> method return a <code>Publisher</code> object,
-and you need to provide an <code>Observer</code> object 
-that contains your logic for processing the results returned by the query.</p>
+<p>You can use a <code>Queryer</code> object to create a real-time SQL statement, also you
+need to provide an <code>Observer</code> object which contains your logic for processing
+the results returned by the query. The <code>Queryer</code> will process data in a
+background thread.</p>
                 
               
               
@@ -1290,7 +1309,7 @@ that contains your logic for processing the results returned by the query.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["instant", "navigation.expand", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.29db7785.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>
