@@ -9,21 +9,21 @@
       
       
       
-        <link rel="canonical" href="https://docs.hstream.io/latest/connector/use/">
+        <link rel="canonical" href="https://docs.hstream.io/latest/connector/tutorial/ClickHouse/">
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
-        <title>Use - HStreamDB Docs</title>
+        <title>ClickHouse - HStreamDB Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -52,7 +52,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-use-hstream-connectors" class="md-skip">
+        <a href="#how-to-use-hstream-connectors-with-clickhouse" class="md-skip">
           Skip to content
         </a>
       
@@ -73,9 +73,9 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="HStreamDB Docs" class="md-header__button md-logo" aria-label="HStreamDB Docs" data-md-component="logo">
+    <a href="../../.." title="HStreamDB Docs" class="md-header__button md-logo" aria-label="HStreamDB Docs" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Use
+              ClickHouse
             
           </span>
         </div>
@@ -217,7 +217,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../overview/overview/" class="md-tabs__link">
+      <a href="../../../overview/overview/" class="md-tabs__link">
         Overview
       </a>
     </li>
@@ -233,7 +233,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../start/quickstart-with-docker/" class="md-tabs__link">
+      <a href="../../../start/quickstart-with-docker/" class="md-tabs__link">
         Getting started
       </a>
     </li>
@@ -254,7 +254,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../develop/java-sdk/installation/" class="md-tabs__link">
+      <a href="../../../develop/java-sdk/installation/" class="md-tabs__link">
         Develop
       </a>
     </li>
@@ -272,7 +272,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../deployment/deploy-k8s/" class="md-tabs__link">
+      <a href="../../../deployment/deploy-k8s/" class="md-tabs__link">
         Deployment
       </a>
     </li>
@@ -288,7 +288,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../sql/sql-overview/" class="md-tabs__link">
+      <a href="../../../sql/sql-overview/" class="md-tabs__link">
         HStreamDB SQL
       </a>
     </li>
@@ -306,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../overview/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../overview/" class="md-tabs__link md-tabs__link--active">
         Connector
       </a>
     </li>
@@ -322,7 +322,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../contributing/haskell-style/" class="md-tabs__link">
+      <a href="../../../contributing/haskell-style/" class="md-tabs__link">
         Contributing
       </a>
     </li>
@@ -349,9 +349,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="HStreamDB Docs" class="md-nav__button md-logo" aria-label="HStreamDB Docs" data-md-component="logo">
+    <a href="../../.." title="HStreamDB Docs" class="md-nav__button md-logo" aria-label="HStreamDB Docs" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     HStreamDB Docs
@@ -401,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/overview/" class="md-nav__link">
+      <a href="../../../overview/overview/" class="md-nav__link">
         HStream Streaming Database Overview
       </a>
     </li>
@@ -434,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/concepts/stream/" class="md-nav__link">
+      <a href="../../../overview/concepts/stream/" class="md-nav__link">
         Stream and Streaming Data
       </a>
     </li>
@@ -473,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/architecture/overview/" class="md-nav__link">
+      <a href="../../../overview/architecture/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -485,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/architecture/hstream-store/" class="md-nav__link">
+      <a href="../../../overview/architecture/hstream-store/" class="md-nav__link">
         HStream Store (HStore)
       </a>
     </li>
@@ -497,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/architecture/hstream-server/" class="md-nav__link">
+      <a href="../../../overview/architecture/hstream-server/" class="md-nav__link">
         HStream Server (HSQL)
       </a>
     </li>
@@ -515,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/features/" class="md-nav__link">
+      <a href="../../../overview/features/" class="md-nav__link">
         Features
       </a>
     </li>
@@ -527,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/release-notes/" class="md-nav__link">
+      <a href="../../../overview/release-notes/" class="md-nav__link">
         Release Notes
       </a>
     </li>
@@ -539,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/learning-resouces/" class="md-nav__link">
+      <a href="../../../overview/learning-resouces/" class="md-nav__link">
         Learning Resources
       </a>
     </li>
@@ -581,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start/quickstart-with-docker/" class="md-nav__link">
+      <a href="../../../start/quickstart-with-docker/" class="md-nav__link">
         Quickstart with Docker
       </a>
     </li>
@@ -593,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start/cli/" class="md-nav__link">
+      <a href="../../../start/cli/" class="md-nav__link">
         CLI usage
       </a>
     </li>
@@ -605,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start/configuration-overview/" class="md-nav__link">
+      <a href="../../../start/configuration-overview/" class="md-nav__link">
         Configurarion Overview
       </a>
     </li>
@@ -617,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start/dashboard-overview/" class="md-nav__link">
+      <a href="../../../start/dashboard-overview/" class="md-nav__link">
         Dashboard Overview
       </a>
     </li>
@@ -680,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/installation/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/installation/" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -692,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/connect/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/connect/" class="md-nav__link">
         Connect
       </a>
     </li>
@@ -704,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/stream/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/stream/" class="md-nav__link">
         Streams
       </a>
     </li>
@@ -716,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/subscription/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/subscription/" class="md-nav__link">
         Subscriptions
       </a>
     </li>
@@ -728,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/write/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/write/" class="md-nav__link">
         Write Data
       </a>
     </li>
@@ -740,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/consume/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/consume/" class="md-nav__link">
         Consume Data
       </a>
     </li>
@@ -752,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../develop/java-sdk/query/" class="md-nav__link">
+      <a href="../../../develop/java-sdk/query/" class="md-nav__link">
         Stream Processing with SQL
       </a>
     </li>
@@ -800,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deployment/deploy-k8s/" class="md-nav__link">
+      <a href="../../../deployment/deploy-k8s/" class="md-nav__link">
         Running on Kubernetes
       </a>
     </li>
@@ -842,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/sql-overview/" class="md-nav__link">
+      <a href="../../../sql/sql-overview/" class="md-nav__link">
         HStreamDB SQL overview
       </a>
     </li>
@@ -854,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/sql-quick-reference/" class="md-nav__link">
+      <a href="../../../sql/sql-quick-reference/" class="md-nav__link">
         HStreamDB SQL quick reference
       </a>
     </li>
@@ -887,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/create-stream/" class="md-nav__link">
+      <a href="../../../sql/statements/create-stream/" class="md-nav__link">
         CREATE STREAM
       </a>
     </li>
@@ -899,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/create-view/" class="md-nav__link">
+      <a href="../../../sql/statements/create-view/" class="md-nav__link">
         CREATE VIEW
       </a>
     </li>
@@ -911,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/create-connector/" class="md-nav__link">
+      <a href="../../../sql/statements/create-connector/" class="md-nav__link">
         CREATE CONNECTOR
       </a>
     </li>
@@ -923,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/select-stream/" class="md-nav__link">
+      <a href="../../../sql/statements/select-stream/" class="md-nav__link">
         SELECT (Stream)
       </a>
     </li>
@@ -935,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/select-view/" class="md-nav__link">
+      <a href="../../../sql/statements/select-view/" class="md-nav__link">
         SELECT (View)
       </a>
     </li>
@@ -947,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/statements/insert/" class="md-nav__link">
+      <a href="../../../sql/statements/insert/" class="md-nav__link">
         INSERT
       </a>
     </li>
@@ -986,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/functions/aggregation/" class="md-nav__link">
+      <a href="../../../sql/functions/aggregation/" class="md-nav__link">
         Aggregation Functions
       </a>
     </li>
@@ -998,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/functions/scalar/" class="md-nav__link">
+      <a href="../../../sql/functions/scalar/" class="md-nav__link">
         Scalar Functions
       </a>
     </li>
@@ -1016,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sql/appendix/" class="md-nav__link">
+      <a href="../../../sql/appendix/" class="md-nav__link">
         Appendix
       </a>
     </li>
@@ -1060,8 +1060,43 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" checked>
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Tutorial
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MySQL/" class="md-nav__link">
+        MySQL
       </a>
     </li>
   
@@ -1082,12 +1117,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Use
+          ClickHouse
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Use
+        ClickHouse
       </a>
       
         
@@ -1105,50 +1140,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-built-in-connectors" class="md-nav__link">
-    Create Built-In Connectors
-  </a>
-  
-    <nav class="md-nav" aria-label="Create Built-In Connectors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    Synopsis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql-connector" class="md-nav__link">
-    Mysql Connector
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#clickhouse-connector" class="md-nav__link">
     Clickhouse Connector
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-result" class="md-nav__link">
-    Check the result
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1156,6 +1150,12 @@
   
 </nav>
       
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1195,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contributing/haskell-style/" class="md-nav__link">
+      <a href="../../../contributing/haskell-style/" class="md-nav__link">
         Haskell style
       </a>
     </li>
@@ -1207,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contributing/build-from-source/" class="md-nav__link">
+      <a href="../../../contributing/build-from-source/" class="md-nav__link">
         Building from source
       </a>
     </li>
@@ -1246,50 +1246,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-built-in-connectors" class="md-nav__link">
-    Create Built-In Connectors
-  </a>
-  
-    <nav class="md-nav" aria-label="Create Built-In Connectors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    Synopsis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysql-connector" class="md-nav__link">
-    Mysql Connector
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#clickhouse-connector" class="md-nav__link">
     Clickhouse Connector
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-result" class="md-nav__link">
-    Check the result
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1306,69 +1265,8 @@
               
                 
                 
-                <h1 id="how-to-use-hstream-connectors">How to use HStream connectors<a class="headerlink" href="#how-to-use-hstream-connectors" title="Permanent link">&para;</a></h1>
-<p>This tutorial describes how to use HStream connectors.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Up to the present, we only provide two built-in sink connectors which can
-subscribe data from streams and write them into mysql and clickhouse.</p>
-</div>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Make sure you have HStreamDB running and accessible. Also available mysql and
-clickhouse service are required if you want to use related connectors.</p>
-<h2 id="create-built-in-connectors">Create Built-In Connectors<a class="headerlink" href="#create-built-in-connectors" title="Permanent link">&para;</a></h2>
-<p>Currently, we provide two built-in connectors, mysql sink connector and
-clickhouse sink connector.</p>
-<h3 id="synopsis">Synopsis<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="n">SINK</span> <span class="n">CONNECTOR</span> <span class="n">connector_name</span> <span class="p">[</span><span class="k">IF</span> <span class="k">NOT</span> <span class="n">EXIST</span><span class="p">]</span> <span class="k">WITH</span> <span class="p">(</span><span class="n">connector_options</span> <span class="p">[...]);</span>
-</code></pre></div>
-<p>There are some connector options provided to create connector such as database
-password, database name, username, database host and port. <code>Type</code> is the only
-required connector option. Until now, the only supported type values are <code>mysql</code>
-and <code>clickhouse</code>.</p>
-<h3 id="mysql-connector">Mysql Connector<a class="headerlink" href="#mysql-connector" title="Permanent link">&para;</a></h3>
-<p>connector options and default value for mysql includes:</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Type</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>username</td>
-<td>String</td>
-<td>"root"</td>
-</tr>
-<tr>
-<td>password</td>
-<td>String</td>
-<td>"password"</td>
-</tr>
-<tr>
-<td>host</td>
-<td>String</td>
-<td>"127.0.0.1"</td>
-</tr>
-<tr>
-<td>port</td>
-<td>Int</td>
-<td>None (Required)</td>
-</tr>
-<tr>
-<td>database</td>
-<td>String</td>
-<td>"mysql"</td>
-</tr>
-</tbody>
-</table>
-<p>An example to create a mysql connector which subscribes from stream <code>source</code> and
-write data to mysql looks like:</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="n">SINK</span> <span class="n">CONNECTOR</span> <span class="n">mysql</span> <span class="k">WITH</span> <span class="p">(</span><span class="k">type</span> <span class="o">=</span> <span class="n">mysql</span><span class="p">,</span> <span class="k">host</span> <span class="o">=</span> <span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span><span class="p">,</span> <span class="n">stream</span> <span class="o">=</span> <span class="k">source</span><span class="p">);</span>
-</code></pre></div>
-<p>The mysql table name will be the same as the stream name.</p>
+                <h1 id="how-to-use-hstream-connectors-with-clickhouse">How to use HStream connectors with ClickHouse<a class="headerlink" href="#how-to-use-hstream-connectors-with-clickhouse" title="Permanent link">&para;</a></h1>
+<p>TODO</p>
 <h3 id="clickhouse-connector">Clickhouse Connector<a class="headerlink" href="#clickhouse-connector" title="Permanent link">&para;</a></h3>
 <p>connector options and default value for clickhouse includes:</p>
 <div class="highlight"><pre><span></span><code>username = &quot;default&quot;
@@ -1382,30 +1280,6 @@ database = &quot;default&quot;
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="n">SINK</span> <span class="n">CONNECTOR</span> <span class="n">mysql</span> <span class="k">WITH</span> <span class="p">(</span><span class="k">type</span> <span class="o">=</span> <span class="n">clickhouse</span><span class="p">,</span> <span class="k">host</span> <span class="o">=</span> <span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">9000</span><span class="p">,</span> <span class="n">stream</span> <span class="o">=</span> <span class="k">source</span><span class="p">);</span>
 </code></pre></div>
 <p>The clickhouse table name will be the same as the stream name.</p>
-<h3 id="check-the-result">Check the result<a class="headerlink" href="#check-the-result" title="Permanent link">&para;</a></h3>
-<p>Once you create a connector which subscribe a particular stream and write data
-to external systems, each time there are new data insert into the stream, the
-data will be write into connected external system in a very short time gap.</p>
-<p>For example, if you create mysql connector like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="n">SINK</span> <span class="n">CONNECTOR</span> <span class="n">mysql</span> <span class="k">WITH</span> <span class="p">(</span><span class="k">type</span> <span class="o">=</span> <span class="n">mysql</span><span class="p">,</span> <span class="k">host</span> <span class="o">=</span> <span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span><span class="p">,</span> <span class="n">stream</span> <span class="o">=</span> <span class="k">source</span><span class="p">);</span>
-</code></pre></div>
-<p>Since the stream data shema is always known advanced, we assume the mysql table
-named <code>source</code> is created advanced. The table schema should looks as the same of
-stream. In this example, we will insert data looks like
-<code>(temperature, humidity) VALUES (12, 84)</code>. Both <code>temperature</code> and <code>humidity</code> are
-numbers.</p>
-<p>So if the mysql table is not exist in the default database <code>mysql</code> yet, you
-might create the mysql table in this way:</p>
-<div class="highlight"><pre><span></span><code><span class="n">use</span> <span class="n">mysql</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="k">source</span> <span class="p">(</span><span class="n">temperature</span> <span class="nb">INT</span><span class="p">,</span> <span class="n">humidity</span> <span class="nb">INT</span><span class="p">)</span> <span class="nb">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8</span><span class="p">;</span>
-</code></pre></div>
-<p>After you insert some data in streams by:</p>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">source</span> <span class="p">(</span><span class="n">temperature</span><span class="p">,</span> <span class="n">humidity</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">84</span><span class="p">);</span>
-<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">source</span> <span class="p">(</span><span class="n">temperature</span><span class="p">,</span> <span class="n">humidity</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">83</span><span class="p">);</span>
-<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">source</span> <span class="p">(</span><span class="n">temperature</span><span class="p">,</span> <span class="n">humidity</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">82</span><span class="p">);</span>
-</code></pre></div>
-<p>You should found your data in mysql table very soon after the insertion are
-done.</p>
                 
               
               
@@ -1430,7 +1304,7 @@ done.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+        <a href="../MySQL/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MySQL" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1439,14 +1313,14 @@ done.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Overview
+              MySQL
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../contributing/haskell-style/" class="md-footer__link md-footer__link--next" aria-label="Next: Haskell style" rel="next">
+        <a href="../../../contributing/haskell-style/" class="md-footer__link md-footer__link--next" aria-label="Next: Haskell style" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -1481,10 +1355,10 @@ done.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant", "navigation.expand", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["instant", "navigation.expand", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
     
   </body>
