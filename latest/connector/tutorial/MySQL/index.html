@@ -1384,20 +1384,14 @@ the interface but any alternatives should work similarly. Please replace the
 host address and port number with your own configuration.</p>
 <div class="highlight"><pre><span></span><code>mycli --host 127.0.0.1 --port 3306 --user root
 </code></pre></div>
-<p>I will be using a database called <code>hstreamdb</code> in MySQL.</p>
+<p>I will be using a database called <code>hstreamdb</code> in MySQL and a table called <code>hstreamtbl</code> with two columns of integers in the database.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">hstreamdb</span><span class="p">;</span>
 <span class="o">&gt;</span> <span class="n">USE</span> <span class="n">hstreamdb</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">hstreamtbl</span> <span class="p">(</span><span class="n">temperature</span> <span class="nb">INT</span><span class="p">,</span> <span class="n">humidity</span> <span class="nb">INT</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="create-built-in-connectors">Create Built-In Connectors<a class="headerlink" href="#create-built-in-connectors" title="Permanent link">&para;</a></h2>
 <p>We first create a source stream called <code>hstreamsrc</code> in our server via an HStream client.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="n">STREAM</span> <span class="n">hstreamsrc</span><span class="p">;</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Before we create a sink connector to subscribe to the source stream, <strong>make sure that there is a table in the database with the same name as the source stream</strong>. </p>
-</div>
-<p>Otherwise, we need to create one with the schema of our interest.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">hstreamsrc</span> <span class="p">(</span><span class="n">temperature</span> <span class="nb">INT</span><span class="p">,</span> <span class="n">humidity</span> <span class="nb">INT</span><span class="p">);</span>
 </code></pre></div>
 <p>Then, let's take a look at the usage of the command to create a connector.</p>
 <h3 id="synopsis">Synopsis<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h3>
@@ -1448,11 +1442,16 @@ host address and port number with your own configuration.</p>
 <td>String</td>
 <td>"mysql"</td>
 </tr>
+<tr>
+<td>table</td>
+<td>String</td>
+<td>Name of the table in the database</td>
+</tr>
 </tbody>
 </table>
-<p>Options with a * symbol are required and others are optional. The <code>type</code> option has to be either <code>mysql</code> or <code>clickhouse</code> for now and the default value listed above are specific to the MySQL option.</p>
+<p>Options with a * symbol are required and others are optional. The <code>type</code> option has to be either <code>mysql</code> or <code>clickhouse</code> for now and the default value listed above are specific to the MySQL option. If the name of table is omitted, the connector will write the data to a table with the same name as the source stream.</p>
 <p>Back to our example, we will use the following command to create a sink connector called <code>mysql_conn</code> that subsribes to the <code>hstreamsrc</code> stream.</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="n">SINK</span> <span class="n">CONNECTOR</span> <span class="n">mysql_conn</span> <span class="k">WITH</span> <span class="p">(</span><span class="k">type</span> <span class="o">=</span> <span class="n">mysql</span><span class="p">,</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">hstreamsrc</span><span class="p">,</span> <span class="n">username</span> <span class="o">=</span> <span class="ss">&quot;root&quot;</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="ss">&quot;&quot;</span><span class="p">,</span> <span class="k">host</span> <span class="o">=</span> <span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span><span class="p">,</span> <span class="k">database</span> <span class="o">=</span> <span class="ss">&quot;hstreamdb&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="n">SINK</span> <span class="n">CONNECTOR</span> <span class="n">mysql_conn</span> <span class="k">WITH</span> <span class="p">(</span><span class="k">type</span> <span class="o">=</span> <span class="n">mysql</span><span class="p">,</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">hstreamsrc</span><span class="p">,</span> <span class="n">username</span> <span class="o">=</span> <span class="ss">&quot;root&quot;</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="ss">&quot;&quot;</span><span class="p">,</span> <span class="k">host</span> <span class="o">=</span> <span class="ss">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span><span class="p">,</span> <span class="k">database</span> <span class="o">=</span> <span class="ss">&quot;hstreamdb&quot;</span><span class="p">,</span> <span class="k">table</span> <span class="o">=</span> <span class="ss">&quot;hstreamtbl&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>You can use the following command to check the status of a connector.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SHOW</span> <span class="n">CONNECTORS</span><span class="p">;</span>
@@ -1504,7 +1503,7 @@ host address and port number with your own configuration.</p>
 </code></pre></div>
 <p>Please make sure that the data inserted into the source stream follow the schema of the table in the database. Otherwise, a MySQL error will happen and the connection is broken subsequently.</p>
 <p>After inserting the data into the source stream, you should be able to view the data on MySQL end,</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">hstreamsrc</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">hstreamtbl</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1514,19 +1513,11 @@ host address and port number with your own configuration.</p>
 <ul>
 <li>What happened if the status of the connector is <code>ExecutionAbort</code>?</li>
 </ul>
-<p>This is caused by an error occured in the execution of a MySQL command, e.g. the table with the same name as the source stream does not exist or the data fed into the source stream do not follow the table schema. You could restart the connection (in the future) or drop it.</p>
+<p>This is caused by an error occured in the execution of a MySQL command, e.g. the table does not exist in the database or the data fed into the source stream do not follow the table schema. You could restart the connection (in the future) or drop it.</p>
 <ul>
 <li>What happened if the status of the connector is <code>Terminate</code>?</li>
 </ul>
 <p>It means a client has requested that the connector be terminated. You could restart the connection (in the future) or drop it in this circumstance.</p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>We will no longer have this restriction in the next release.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
                 
               
               
